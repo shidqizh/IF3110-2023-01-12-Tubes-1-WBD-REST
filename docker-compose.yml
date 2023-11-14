@@ -4,14 +4,17 @@ services:
   db:
     image: 'mysql'
     ports:
-      - "9906:3306"
+      - "3306:3306"
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-      - MYSQL_DATABASE=rest_api_db
-      - MYSQL_USER=your-mysql-user
-      - MYSQL_PASSWORD=your-mysql-password
+      - MYSQL_ROOT_PASSWORD=ok
+      - MYSQL_DATABASE=rest_api_db2
+      - MYSQL_USER=ok
+      - MYSQL_PASSWORD=ok
+      - MYSQL_PORT=3306
     env_file:
       - .env
+    volumes:
+      - ./prisma/migrations/20231114063528_sembah/:/docker-entrypoint-initdb.d
 
   server:
     build: .
