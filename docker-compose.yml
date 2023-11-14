@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  db:
+    image: 'mysql'
+    ports:
+      - "9906:3306"
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=rest_api_db
+      - MYSQL_USER=your-mysql-user
+      - MYSQL_PASSWORD=your-mysql-password
+    env_file:
+      - .env
+
+  server:
+    build: .
+    ports:
+      - '8000:8000'
+    environment:
+      DATABASE_URL: "mysql://root:@localhost:3306/rest_api_db2?schema=public"
