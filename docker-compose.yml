@@ -24,8 +24,10 @@ services:
     container_name: server
     ports:
       - '8000:8000'
+    env_file:
+      - .env
     environment:
       NODE_ENV: production
-      DATABASE_URL: "mysql://root:@localhost:3306/rest_api_db2?schema=public"
+      DATABASE_URL: "mysql://root:ok@host.docker.internal:3306/rest_api_db2?schema=public"
     volumes:
       - .:/app

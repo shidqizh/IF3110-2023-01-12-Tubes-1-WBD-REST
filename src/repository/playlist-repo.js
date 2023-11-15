@@ -11,7 +11,7 @@ const findPlaylists = async () => {
   const findPlaylistById = async (id) => {
     const Playlist = await prisma.playlist.findUnique({
       where: {
-        id,
+        id_playlist: parseInt(id),
       },
     });
   
@@ -31,7 +31,7 @@ const findPlaylists = async () => {
   const deletePlaylist = async (id) => {
     await prisma.playlist.delete({
       where: {
-        id,
+        id_playlist: parseInt(id),
       },
     });
   };
@@ -39,7 +39,7 @@ const findPlaylists = async () => {
   const editPlaylist = async (id, PlaylistData) => {
     const Playlist = await prisma.playlist.update({
       where: {
-        id: parseInt(id),
+        id_playlist: parseInt(id),
       },
       data: {
         name: PlaylistData.name
