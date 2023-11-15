@@ -22,9 +22,6 @@ const findPlaylists = async () => {
     const Playlist = await prisma.playlist.create({
       data: {
         name: PlaylistData.name,
-        description: PlaylistData.description,
-        image: PlaylistData.image,
-        price: PlaylistData.price,
       },
     });
   
@@ -45,10 +42,7 @@ const findPlaylists = async () => {
         id: parseInt(id),
       },
       data: {
-        description: PlaylistData.description,
-        image: PlaylistData.image,
-        name: PlaylistData.name,
-        price: PlaylistData.price,
+        name: PlaylistData.name
       },
     });
   
