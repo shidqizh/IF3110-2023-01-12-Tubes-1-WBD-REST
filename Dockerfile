@@ -1,15 +1,15 @@
 FROM node:16-alpine
 
-WORKDIR /src
+WORKDIR /app
 
 COPY package*.json ./
 
-RUN rm -rf node_modules
 RUN npm install
+
 COPY . .
+
 EXPOSE 8000
 
-RUN npx prisma migrate dev
+RUN npx prisma generate
 
-
-CMD [ "npm", "run", "dev" ]
+CMD ["node", "index.js"]

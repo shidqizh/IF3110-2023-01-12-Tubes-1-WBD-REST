@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   db:
-    image: 'mysql'
+    image: "mysql"
     ports:
       - "3306:3306"
     environment:
@@ -17,8 +17,15 @@ services:
       - ./prisma/migrations/20231114063528_sembah/:/docker-entrypoint-initdb.d
 
   server:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: server
+    container_name: server
     ports:
       - '8000:8000'
     environment:
+      NODE_ENV: production
       DATABASE_URL: "mysql://root:@localhost:3306/rest_api_db2?schema=public"
+    volumes:
+      - .:/app
