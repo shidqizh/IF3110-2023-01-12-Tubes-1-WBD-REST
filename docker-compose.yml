@@ -7,7 +7,7 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=ok
-      - MYSQL_DATABASE=rest_api_db2
+      - MYSQL_DATABASE=wbd-rest-db-1
       - MYSQL_USER=ok
       - MYSQL_PASSWORD=ok
       - MYSQL_PORT=3306
@@ -28,6 +28,7 @@ services:
       - .env
     environment:
       NODE_ENV: production
-      DATABASE_URL: "mysql://root:ok@host.docker.internal:3306/rest_api_db2?schema=public"
+      DATABASE_URL: "mysql://root:ok@db:3306/wbd-rest-db-1?schema=public"
     volumes:
       - .:/app
+

@@ -15,5 +15,14 @@ datasource db {
 model Playlist{
   id_playlist Int @id @default(autoincrement())
   name String
+  artist String
  
 }
+
+model User{
+  id_user Int @id @default(autoincrement())
+  username String
+  password String
+
+}
+
