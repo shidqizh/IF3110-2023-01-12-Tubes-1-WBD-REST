@@ -28,6 +28,6 @@ Pastikan melakukan instalasi terhadap beberapa requirement berikut:
 5. Buka browser lalu masukkan "http://localhost:8000"
 
 ## Pembagian Kerja Kelompok
--Song, User: 13521068
--Playlist, User: 13521097 
--Database: 13521068, 13521097
+- Song, User: 13521068
+- Playlist, User: 13521097 
+- Database: 13521068, 13521097
