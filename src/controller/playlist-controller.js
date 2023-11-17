@@ -13,7 +13,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   const Playlists = await getAllPlaylists();
-
+  console.log(Playlists);
   res.send(Playlists);
 });
 
