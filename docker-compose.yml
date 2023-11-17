@@ -14,7 +14,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./prisma/migrations/20231117055331_db/:/docker-entrypoint-initdb.d
+      - ./prisma/migrations/20231117071051_db/:/docker-entrypoint-initdb.d
 
   server:
     build:

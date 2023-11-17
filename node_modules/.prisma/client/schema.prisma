@@ -30,5 +30,8 @@ model Song {
   id_song Int @id @default(autoincrement())
   title String
   artist String
+  album String
+  date String
+  duration String
 }
 
